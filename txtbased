@@ -1,0 +1,1250 @@
+from time import sleep
+
+
+#this function takes in a variable and checks if the input
+#is an integer. if it is not an integer, it will return false
+def checkInt(v):
+  try:
+    int(v)
+    return True
+  except ValueError:
+    return False
+
+
+#this function takes in a string and prints out each letter
+#of that string with .02 of a second in between then prints
+#a new line
+def text_animation(text):
+  for i in text:
+    print(i, flush=True, end="")
+    sleep(.02)
+  print("")
+
+
+#this functions takes the user through the tree/pathway
+#for the dragon role/option
+def dragon():
+  #color codes
+  orange = "\033[0;33m"
+  cyan = "\033[0;36m"
+  norm = "\033[0m"
+
+  #start of path
+  print("")
+  text_animation("Your bleary eyes slowly open to a familiar " +
+                 "darkness. The same monotonous water drip " +
+                 " fills your ears as you unfurl your large " +
+                 " wings. However, you hear  something unsual " +
+                 "as well. Loud cheers seep in from the mouth " +
+                 "of the cave. What to do?")
+  print("")
+  print(orange + "Go outside {1}    Stay inside {2}" + norm)
+  choice = input("\t> ")
+
+  #input validation
+  while not checkInt(choice) or int(choice) not in [1, 2]:
+    print("")
+    print(cyan + "Please enter a valid number." + norm)
+    print(orange + "Go outside {1}    Stay inside {2}" + norm)
+    choice = input("\t> ")
+
+  if (int(choice) == 1):
+    print("")
+    text_animation("When was the last time you've stepped " +
+                   "foot out of this cave? You can't remember. " +
+                   "It's been far too long. The trees are even " +
+                   "greener than you remember. Now what?")
+    print("")
+    print(orange + "Go down {1}    Explore forest {2}" + norm)
+    choice = input("\t> ")
+
+    #input validation
+    while not checkInt(choice) or int(choice) not in [1, 2]:
+      print("")
+      print(cyan + "Please enter a valid number." + norm)
+      print(orange + "Go down {1}    Explore forest {2}" + norm)
+      choice = input("\t> ")
+
+    if (int(choice) == 1):
+      print("")
+      text_animation("At the base of the mountain, you discover " +
+                     "the source of the cheers. There seems to be " +
+                     "a festival going on. Purple and white " +
+                     "banners wave atop stalls while children " +
+                     "scream and run around. Do you continue?")
+      print("")
+      print(orange + "Continue {1}    Go back {2}" + norm)
+      choice = input("\t> ")
+
+      #input validation
+      while not checkInt(choice) or int(choice) not in [1, 2]:
+        print("")
+        print(cyan + "Please enter a valid number." + norm)
+        print(orange + "Continue {1}    Go back {2}" + norm)
+        choice = input("\t> ")
+
+      if (int(choice) == 1):
+        print("")
+        text_animation("As you wander through the festival, " +
+                       "you find yourself in front of a set of " +
+                       "large wooden doors. A small push is all " +
+                       "it takes for you to get it open. " +
+                       "Sauntering in, you smell something " +
+                       "scrumptious in one room while hearing " +
+                       "a beautiful voice coming from another." + 
+                       " Where to?")
+        print("")
+        print(orange + "Princess' Room {1}    Kitchen {2}" + norm)
+        choice = input("\t> ")
+
+        #input validation
+        while not checkInt(choice) or int(choice) not in [1, 2]:
+          print("")
+          print(cyan + "Please enter a valid number." + norm)
+          print(orange + "Princess' Room {1}    Kitchen {2}" + norm)
+          choice = input("\t> ")
+
+        if (int(choice) == 1):
+          print("")
+          text_animation("Slipping through the crack of the door, " +
+                         "you find the source of the beautiful " +
+                         "voice. Such a song could only be produced " +
+                         "by an equally beautiful person. She's " +
+                         "brushing her hair, about to turn around. " +
+                         "Should you stay or should you go?")
+          print("")
+          print(orange + "Stay {1}    Go {2}" + norm)
+          choice = input("\t> ")
+
+          #input validation
+          while not checkInt(choice) or int(choice) not in [1, 2]:
+            print("")
+            print(cyan + "Please enter a valid number." + norm)
+            print(orange + "Stay {1}    Go {2}" + norm)
+            choice = input("\t> ")
+
+          #sixth ending
+          if (int(choice) == 1):
+            print("")
+            text_animation(orange + "Your eyes meet, and instantly, " +
+                           "your heart is sure you made the right " +
+                           "decision. She doesn't scream or show " +
+                           "any signs of fear. Instead, she places " +
+                           "down her brush and slowly kneels in " +
+                           "front of you, outstretching her arms. " +
+                           "Jumping into them is an obvious and " +
+                           "natural choice. She will certainly " +
+                           "understand you more than any being " +
+                           "before and any being in your future.")
+            print("")
+            print(cyan + "True " + orange + "Dragon " + norm +
+                  "Ending 6: Home")
+            print("")
+            print(cyan + "Would you like to try again?")
+            print("")
+            print("Yes {1}   No {2}" + norm)
+            choice = input("\t> ")
+
+            while not checkInt(choice) or int(choice) not in [1, 2]:
+              print("")
+              print(cyan + "Please enter a valid number.")
+              print("")
+              print("Yes {1}   No {2}" + norm)
+              choice = input("\t> ")
+
+            if (int(choice) == 1):
+              return 1
+            else:
+              return 0
+          #fifth ending
+          else:
+            print("")
+            text_animation(orange + "Just before she can turn, " +
+                           "you slide under the bed then slip " +
+                           "through the window. You turn your head " +
+                           "with an odd sense of regret and " + 
+                           "sadness, " +
+                           "but your feet are already carrying you " +
+                           "back to your cold and barren cave.")
+            print("")
+            print(orange + "Dragon " + norm + "Ending 5: Missed")
+            print("")
+            print(cyan + "Would you like to try again?")
+            print("")
+            print("Yes {1}   No {2}" + norm)
+            choice = input("\t> ")
+
+            while not checkInt(choice) or int(choice) not in [1, 2]:
+              print("")
+              print(cyan + "Please enter a valid number.")
+              print("")
+              print("Yes {1}   No {2}" + norm)
+              choice = input("\t> ")
+
+            if (int(choice) == 1):
+              return 1
+            else:
+              return 0
+        #fourth ending
+        else:
+          print("")
+          text_animation(orange + "You were right to enter the " +
+                         "kitchen. Your nose has never led you " +
+                         "astray. A huge rack of lamb was simply " +
+                         "waiting for you atop the counter. " +
+                         "Unfortunately, you didn't realize that " +
+                         "humans wouldn't take too kindly to you " +
+                         "stealing their food. One of the chefs " +
+                         "grab you by the neck and throw you out " +
+                         "the window.")
+          print("")
+          print(orange + "Dragon " + norm + "Ending 4: Glutton")
+          print("")
+          print(cyan + "Would you like to try again?")
+          print("")
+          print("Yes {1}   No {2}" + norm)
+          choice = input("\t> ")
+
+          while not checkInt(choice) or int(choice) not in [1, 2]:
+            print("")
+            print(cyan + "Please enter a valid number.")
+            print("")
+            print("Yes {1}   No {2}" + norm)
+            choice = input("\t> ")
+
+          if (int(choice) == 1):
+            return 1
+          else:
+            return 0
+      #third ending
+      else:
+        print("")
+        text_animation(orange + "Just going down the mountain " +
+                       "has satiated your curiosity. There's no " +
+                       "need to look any further. Perhaps a " +
+                       "different day. For now, you lay down " +
+                       "once more in dark comfort of your cave.")
+        print("")
+        print(orange + "Dragon " + norm + "Ending 3: Regress")
+        print("")
+        print(cyan + "Would you like to try again?")
+        print("")
+        print("Yes {1}   No {2}" + norm)
+        choice = input("\t> ")
+
+        while not checkInt(choice) or int(choice) not in [1, 2]:
+          print("")
+          print(cyan + "Please enter a valid number.")
+          print("")
+          print("Yes {1}   No {2}" + norm)
+          choice = input("\t> ")
+
+        if (int(choice) == 1):
+          return 1
+        else:
+          return 0
+    #second ending
+    else:
+      print("")
+      text_animation(orange + "The creatures skittering around " +
+                     "the leaf-covered floor beneath you seem to " +
+                     "have an odd sense of reverence towards you. " +
+                     "They must not have expected anything to exit " +
+                     "that old cave, especially not a mighty and " +
+                     "ferocious dragon. You certainly mean no harm." +
+                     " Sensing this, they're more than happy to " +
+                     "follow you.")
+      print("")
+      print(orange + "Dragon " + norm + "Ending 2: King")
+      print("")
+      print(cyan + "Would you like to try again?")
+      print("")
+      print("Yes {1}   No {2}" + norm)
+      choice = input("\t> ")
+
+      while not checkInt(choice) or int(choice) not in [1, 2]:
+        print("")
+        print(cyan + "Please enter a valid number.")
+        print("")
+        print("Yes {1}   No {2}" + norm)
+        choice = input("\t> ")
+
+      if (int(choice) == 1):
+        return 1
+      else:
+        return 0
+  #first ending
+  else:
+    print("")
+    text_animation(orange + "Days pass dimly yet the cheers seem to " +
+                   "never end. They intrigue you but not more than " +
+                   "they scare you. It's safer in here. You are " +
+                   "safe here. You lay here for a long, long time. " +
+                   "Nothing changes.")
+    print("")
+    print(orange + "Dragon " + norm + "Ending 1: Safe")
+    print("")
+    print(cyan + "Would you like to try again?")
+    print("")
+    print("Yes {1}   No {2}" + norm)
+    choice = input("\t> ")
+
+    while not checkInt(choice) or int(choice) not in [1, 2]:
+      print("")
+      print(cyan + "Please enter a valid number.")
+      print("")
+      print("Yes {1}   No {2}" + norm)
+      choice = input("\t> ")
+
+    if (int(choice) == 1):
+      return 1
+    else:
+      return 0
+
+
+#this function takes the user through the tree/pathway
+#for the princess role/option
+def princess():
+  #color codes
+  green = "\033[0;32m"
+  cyan = "\033[0;36m"
+  norm = "\033[0m"
+
+  #start of pathway
+  print("")
+  text_animation("Bright and early in the morning, " +
+                 "the King has called you into the main " +
+                 "hall. It's the Spring Festival and the " +
+                 "princess must make an apperance. " +
+                 " He called you here to see which event " +
+                 "you'll oversee. Would you like to go to " +
+                 "the singing contest or the knight's " + "tournament?")
+  print("")
+  print(green + "Singing Contest {1}   " + "Knight's Tournament {2}" + norm)
+  choice = input("\t> ")
+
+  #input validation
+  while not checkInt(choice) or int(choice) not in [1, 2]:
+    print("")
+    print(cyan + "Please enter a valid number." + norm)
+    print(green + "Singing Contest {1}   " + "Knight's Tournament {2}" + norm)
+    choice = input("\t> ")
+
+  #singing branch
+  if (int(choice) == 1):
+    print("")
+    text_animation("Strolling through the streets, you see " +
+                   "everyone hustling and bustling around. " +
+                   "When you see a crowd forming near a " +
+                   "purple tent, you realize that they're " +
+                   "preparing for the singing contest. " +
+                   "Would you like to participate or watch?")
+    print("")
+    print(green + "Participate {1}   Watch {2}" + norm)
+    choice = input("\t> ")
+
+    while not checkInt(choice) or int(choice) not in [1, 2]:
+      print("")
+      print(cyan + "Please enter a valid number." + norm)
+      print(green + "Participate {1}   Watch {2}" + norm)
+      choice = input("\t> ")
+
+    if (int(choice) == 1):
+      print("")
+      text_animation("It's been ages since you've participated " +
+                     "in a contest of any kind. Feeling a bit " +
+                     "nervous, you look around. You see another " +
+                     "contestant looking as nervous as you do " +
+                     "and a secluded place to pratice. Do you " +
+                     "want to pratice by yourself or with your " +
+                     "fellow contestant?")
+      print("")
+      print(green + "By yourself {1}   " + "With contestant {2}" + norm)
+      choice = input("\t> ")
+
+      while not checkInt(choice) or int(choice) not in [1, 2]:
+        print("")
+        print(cyan + "Please enter a valid number." + norm)
+        print(green + "By yourself {1}   " + "With contestant {2}" + norm)
+        choice = input("\t> ")
+      #ending 2
+      if (int(choice) == 1):
+        print("")
+        text_animation(green + "Praticing by yourself certainly " +
+                       "helped your nerves. Your dragon served to " +
+                       "be a great audience, and you feel much more " +
+                       "confident in your skills. The performace " +
+                       "you give is one you can be proud of. " +
+                       "However, when you spot the contestant you " +
+                       "saw earlier trip up during their turn, " +
+                       "you feel a twinge of guilt.")
+        print("")
+        print(green + "Princess " + norm + "Ending 2: Selfish")
+        print("")
+        print(cyan + "Would you like to try again?")
+        print("")
+        print("Yes {1}   No {2}" + norm)
+        choice = input("\t> ")
+
+        while not checkInt(choice) or int(choice) not in [1, 2]:
+          print("")
+          print(cyan + "Please enter a valid number.")
+          print("")
+          print("Yes {1}   No {2}" + norm)
+          choice = input("\t> ")
+
+        if (int(choice) == 1):
+          return 1
+        else:
+          return 0
+      #ending 3
+      else:
+        print("")
+        text_animation(green + "The contestant takes your offer " +
+                       "of joint pratice with a big smile. Their " +
+                       "smile and soft voice immediately calm your " +
+                       "nerves. You're extremely glad to have " +
+                       "praticed with them and can preform with " +
+                       "ease. You stand together as you await the " +
+                       "judges' decision.")
+        print("")
+        print(green + "Princess " + norm + "Ending 3: Supported")
+        print("")
+        print(cyan + "Would you like to try again?")
+        print("")
+        print("Yes {1}   No {2}" + norm)
+        choice = input("\t> ")
+
+        while not checkInt(choice) or int(choice) not in [1, 2]:
+          print("")
+          print(cyan + "Please enter a valid number.")
+          print("")
+          print("Yes {1}   No {2}" + norm)
+          choice = input("\t> ")
+
+        if (int(choice) == 1):
+          return 1
+        else:
+          return 0
+    #ending 1
+    else:
+      print("")
+      text_animation(green + "You continue checking out " +
+                     "stalls until its time for the singing " +
+                     "contest. Each contestant gives a " +
+                     "wonderful performace. You're delighted " +
+                     "to have chosen the contest, but you " +
+                     "can't help but feel a bit sad.")
+      print("")
+      print(green + "Princess " + norm + "Ending 1: Spectator")
+      print("")
+      print(cyan + "Would you like to try again?")
+      print("")
+      print("Yes {1}   No {2}" + norm)
+      choice = input("\t> ")
+
+      while not checkInt(choice) or int(choice) not in [1, 2]:
+        print("")
+        print(cyan + "Please enter a valid number.")
+        print("")
+        print("Yes {1}   No {2}" + norm)
+        choice = input("\t> ")
+
+      if (int(choice) == 1):
+        return 1
+      else:
+        return 0
+  #knight branch
+  else:
+    print("")
+    text_animation("You agreed to watch the knight's " +
+                   "tournament, but admittedly, you don't know " +
+                   "anything about it. You've seen the guards " +
+                   "before, and your father has been asking you " +
+                   "to pick a personal guard. That's about it, " +
+                   "however. You don't know what the knights " +
+                   "do. Would you like to watch them train or " +
+                   "just stay home till the tournament?")
+    print("")
+    print(green + "Stay home {1}   Watch training {2}" + norm)
+    print("")
+    choice = input("\t> ")
+
+    #input validation
+    while not checkInt(choice) or int(choice) not in [1, 2]:
+      print("")
+      print(cyan + "Please enter a valid number." + norm)
+      print(green + "Stay home {1}   Watch training {2}" + norm)
+      choice = input("\t> ")
+
+    #fourth ending
+    if ((int(choice) == 1)):
+      print("")
+      text_animation(green + "Staying in your room is uneventful." +
+                     " You play around with your dragon as usual " +
+                     "then eventually head down to the tournament. " +
+                     "It was also uneventful but still a fun watch." +
+                     " Maybe you'll go again next year.")
+      print("")
+      print(green + "Princess " + norm + "Ending 4: Unchanging")
+      print("")
+      print(cyan + "Would you like to try again?")
+      print("")
+      print("Yes {1}   No {2}" + norm)
+      choice = input("\t> ")
+
+      while not checkInt(choice) or int(choice) not in [1, 2]:
+        print("")
+        print(cyan + "Please enter a valid number.")
+        print("")
+        print("Yes {1}   No {2}" + norm)
+        choice = input("\t> ")
+
+      if (int(choice) == 1):
+        return 1
+      else:
+        return 0
+    else:
+      print("")
+      text_animation("While you want to watch the training, " +
+                     "you don't know what happens there, and " +
+                     "that makes you a bit nervous. Bringing " +
+                     "your dragon would give you some comfort " +
+                     "but you aren't sure if its safe for them " +
+                     "to be there. Do you bring them or leave them?")
+      print("")
+      print(green + "Bring them {1}   Leave them {2}" + norm)
+      print("")
+      choice = input("\t> ")
+
+      #input validation
+      while not checkInt(choice) or int(choice) not in [1, 2]:
+        print("")
+        print(cyan + "Please enter a valid number." + norm)
+        print(green + "Bring them {1}   Leave them {2}" + norm)
+        choice = input("\t> ")
+
+      if (int(choice) == 1):
+        print("")
+        text_animation("Dragon in hand, you head down to the " +
+                       "training grounds. The knights are hard " +
+                       "at work, so you quietly take a seat in " +
+                       "the stands. At first, they're just " +
+                       "running some simple drills, and everything " +
+                       "goes fine. However, when they start " +
+                       "sparring, your dragon gets spooked by " +
+                       "the loud sound of metal clanging. " +
+                       "Should you chase after them or " + "call for help?")
+        print("")
+        print(green + "Chase {1}   Call for help {2}" + norm)
+        print("")
+        choice = input("\t> ")
+
+        #input validation
+        while not checkInt(choice) or int(choice) not in [1, 2]:
+          print("")
+          print(cyan + "Please enter a valid number." + norm)
+          print(green + "Chase {1}   Call for help {2}" + norm)
+          choice = input("\t> ")
+
+        if (int(choice) == 1):
+          print("")
+          text_animation("You give chase and are quick to catch " +
+                         "up. Surprisingly, you aren't the only " +
+                         "one to spurr into action. You see a young " +
+                         "standing just before you with your dragon " +
+                         "craddled in their arms. They quickly " +
+                         "hand off the dragon to you. How do you " + "react?")
+          print("")
+          print(green + "Start a conversation {1}   " +
+                "Head back to the grounds {2}" + norm)
+          print("")
+          choice = input("\t> ")
+
+          #input validation
+          while not checkInt(choice) or int(choice) not in [1, 2]:
+            print("")
+            print(cyan + "Please enter a valid number." + norm)
+            print(green + "Start a conversation {1}   " +
+                  "Head back to the grounds {2}" + norm)
+            choice = input("\t> ")
+
+          #eighth ending
+          if (int(choice) == 1):
+            print("")
+            text_animation(green + "Starting with a thank you, you converse" +
+                           " with the young knight as you walk back. " +
+                           "Instantly, the two of you get along. " +
+                           "It's a connection that reminds you of a" +
+                           " feeling you had felt before. One that " +
+                           "you knew in your sould is right. After " +
+                           "they won the tournament, you knew what " +
+                           "you had to do. Father will be so " +
+                           "delighted to hear that you've finally " +
+                           "selected a personal guard.")
+            print("")
+            print(cyan + "True " + green + "Princess " + norm +
+                  "Ending 8: Companion")
+            print("")
+            print(cyan + "Would you like to try again?")
+            print("")
+            print("Yes {1}   No {2}" + norm)
+            choice = input("\t> ")
+
+            while not checkInt(choice) or int(choice) not in [1, 2]:
+              print("")
+              print(cyan + "Please enter a valid number.")
+              print("")
+              print("Yes {1}   No {2}" + norm)
+              choice = input("\t> ")
+
+            if (int(choice) == 1):
+              return 1
+            else:
+              return 0
+          #seventh ending
+          else:
+            print("")
+            text_animation(green + "You bow your head in a quick " +
+                           "thanks then turn to head back to the " +
+                           "grounds. As you watch the rest of the " +
+                           "training and the tournament itself, " +
+                           "your eyes can't leave the solitary " +
+                           "figure of that young knight. When " +
+                           "everything is over, you can't help " +
+                           "but wish you had spoken to them.")
+            print("")
+            print(green + "Princess " + norm + "Ending 7: Lost")
+            print("")
+            print(cyan + "Would you like to try again?")
+            print("")
+            print("Yes {1}   No {2}" + norm)
+            choice = input("\t> ")
+
+            while not checkInt(choice) or int(choice) not in [1, 2]:
+              print("")
+              print(cyan + "Please enter a valid number.")
+              print("")
+              print("Yes {1}   No {2}" + norm)
+              choice = input("\t> ")
+
+            if (int(choice) == 1):
+              return 1
+            else:
+              return 0
+        #sixth ending
+        else:
+          print("")
+          text_animation(green + "You shout for the knights, " +
+                         "and they're quick to respond. They " +
+                         "safely rescue your beloved dragon, " +
+                         "and in a fright, you return to the " +
+                         "castle. Your servant lets your father " +
+                         "know about the situation, and you're " +
+                         "excused from viewing the tournament." +
+                         " You take this time to calm down and " +
+                         "snuggle with your dragon.")
+          print("")
+          print(green + "Princess " + norm + "Ending 6: Spooked")
+          print("")
+          print(cyan + "Would you like to try again?")
+          print("")
+          print("Yes {1}   No {2}" + norm)
+          choice = input("\t> ")
+
+          while not checkInt(choice) or int(choice) not in [1, 2]:
+            print("")
+            print(cyan + "Please enter a valid number.")
+            print("")
+            print("Yes {1}   No {2}" + norm)
+            choice = input("\t> ")
+
+          if (int(choice) == 1):
+            return 1
+          else:
+            return 0
+      #fifth ending
+      else:
+        print("")
+        text_animation(green + "Leaving your dragon behind, you " +
+                       "make way to the training grounds. " +
+                       "Fortunately, nothing dangerous happens, " +
+                       "and you regret not bringing your dragon " +
+                       "along. They would've liked watching " +
+                       "shiny swords clash. You stick around, " +
+                       "to watch the tournament, but part of " +
+                       "your mind is always thinking about your " +
+                       "dragon waiting at home.")
+        print("")
+        print(green + "Princess " + norm + "Ending 5: Alone")
+        print("")
+        print(cyan + "Would you like to try again?")
+        print("")
+        print("Yes {1}   No {2}" + norm)
+        choice = input("\t> ")
+
+        while not checkInt(choice) or int(choice) not in [1, 2]:
+          print("")
+          print(cyan + "Please enter a valid number.")
+          print("")
+          print("Yes {1}   No {2}" + norm)
+          choice = input("\t> ")
+
+        if (int(choice) == 1):
+          return 1
+        else:
+          return 0
+
+
+#this function takes the user through the tree/pathway
+#for the knight role/option
+def knight():
+  #color codes
+  red = "\033[0;31m"
+  cyan = "\033[0;36m"
+  norm = "\033[0m"
+
+  #start of pathway
+  print("")
+  text_animation("Waking with a startle, you reach out and " +
+                 "feel around, unfamiliar fabric underneath " +
+                 "your fingertips. It's your first day in " +
+                 "the kingdom yet you had a vivid dream about " +
+                 "the past. Would you like to go down memory " +
+                 "lane or get on with your day?")
+  print("")
+  print(red + "Past {1}   Present {2}" + norm)
+  choice = input("\t> ")
+
+  #input validation
+  while not checkInt(choice) or int(choice) not in [1, 2]:
+    print("")
+    print(cyan + "Please enter a valid number." + norm)
+    print(red + "Past {1}   Present {2}" + norm)
+    choice = input("\t> ")
+
+  #past branch
+  if (int(choice) == 1):
+    print("")
+    text_animation("As soon as you stop for breath, " +
+                   "rain begins pouring down around you. " +
+                   "It's laughable to think you could ever " +
+                   "catch a break. Now, even breathing is a " +
+                   "luxury for you. With this terrible weather, " +
+                   "do you take refuge in the forest or keep " +
+                   "walking down this dirt path?")
+    print("")
+    print(red + "Keep walking {1}   Take refuge {2}" + norm)
+    choice = input("\t> ")
+
+    #input validation
+    while not checkInt(choice) or int(choice) not in [1, 2]:
+      print("")
+      print(cyan + "Please enter a valid number." + norm)
+      print(red + "Keep walking {1}   Take refuge {2}" + norm)
+      choice = input("\t> ")
+
+    #first ending
+    if (int(choice) == 1):
+      print("")
+      text_animation(red + "You thought the rain would let " +
+                     "up soon, but there's no way anything " +
+                     "could be that easy. The end of this rain " +
+                     "nor the end of this path seems to be " +
+                     "anywhere in sight. As you continue this " +
+                     "trek, you being coughing hard enough you " +
+                     "nearly throw up. It's not long before " +
+                     "all your strength is sapped from you. " +
+                     "You thought this path would lead to a " +
+                     "new beginning, not your end.")
+      print("")
+      print(red + "Knight " + norm + "Ending 1: Sickness")
+      print("")
+      print(cyan + "Would you like to try again?")
+      print("")
+      print("Yes {1}   No {2}" + norm)
+      choice = input("\t> ")
+
+      while not checkInt(choice) or int(choice) not in [1, 2]:
+        print("")
+        print(cyan + "Please enter a valid number.")
+        print("")
+        print("Yes {1}   No {2}" + norm)
+        choice = input("\t> ")
+
+      if (int(choice) == 1):
+        return 1
+      else:
+        return 0
+    else:
+      print("")
+      text_animation("You enter the forest, and the canopy " +
+                     "provides decent coverage. You can't " +
+                     "just keep strolling through the forest, " +
+                     "however. The rain is coming down too hard, " +
+                     "and you're starting to shiver. Should you " +
+                     "wait it out in the rain or hide in that " +
+                     "nearby cave?")
+      print("")
+      print(red + "Bushes {1}   Cave {2}" + norm)
+      choice = input("\t> ")
+
+      #input validation
+      while not checkInt(choice) or int(choice) not in [1, 2]:
+        print("")
+        print(cyan + "Please enter a valid number." + norm)
+        print(red + "Bushes {1}   Cave {2}" + norm)
+        choice = input("\t> ")
+
+      if (int(choice) == 1):
+        print("")
+        text_animation("The bushes provide decent cover. " +
+                       "Enough for you to not feel like death " +
+                       "once the rain lets up. Without the " +
+                       "weather to occupy your mind, you finally " +
+                       "realize how hungry you are. Your stomach " +
+                       "even lets out a small grumble to remind " +
+                       "you to eat. Do you just eat the berries " +
+                       "on this bush or go out hunting?")
+        print("")
+        print(red + "Berries {1}   Hunting {2}" + norm)
+        choice = input("\t> ")
+
+        #input validation
+        while not checkInt(choice) or int(choice) not in [1, 2]:
+          print("")
+          print(cyan + "Please enter a valid number." + norm)
+          print(red + "Berries {1}   Hunting {2}" + norm)
+          choice = input("\t> ")
+
+        #second ending
+        if (int(choice) == 1):
+          print("")
+          text_animation(red + "Didn't anyone teach you common " + "sense?" +
+                         cyan + " Perhaps that was " +
+                         "insensitive given the situation but " + "alas." +
+                         red + " It doesn't take long " +
+                         "for you to realize something is wrong." +
+                         " Your mouth gets dry, your pulse slows, " +
+                         "and soon you're vomitting. The loss of " +
+                         "sensation lets you know that you don't " +
+                         "have long left. You lay down in the " +
+                         "bushes. It's unfortunate that this " +
+                         "shelter couldn't keep you safe.")
+          print("")
+          print(red + "Knight " + norm + "Ending 2: Hubris")
+          print("")
+          print(cyan + "Would you like to try again?")
+          print("")
+          print("Yes {1}   No {2}" + norm)
+          choice = input("\t> ")
+
+          while not checkInt(choice) or int(choice) not in [1, 2]:
+            print("")
+            print(cyan + "Please enter a valid number.")
+            print("")
+            print("Yes {1}   No {2}" + norm)
+            choice = input("\t> ")
+
+          if (int(choice) == 1):
+            return 1
+          else:
+            return 0
+        else:
+          print("")
+          text_animation("You can't trust those berries, but " +
+                         "you can trust your own skills. After " +
+                         "all, your father is" + cyan + ", no, was" +
+                         norm +
+                         " the best hunter around. " +
+                         "You kept this old sword with you for " +
+                         "a reason. You set out to find dinner, " +
+                         "when a rustling noise catches your " +
+                         "attention. Do you follow the noise or " +
+                         "run away?")
+          print("")
+          print(red + "Follow {1}   Run {2}" + norm)
+          choice = input("\t> ")
+
+          #input validation
+          while not checkInt(choice) or int(choice) not in [1, 2]:
+            print("")
+            print(cyan + "Please enter a valid number." + norm)
+            print(red + "Follow {1}   Run {2}" + norm)
+            choice = input("\t> ")
+
+          #fourth ending - true ending alternate
+          if (int(choice) == 1):
+            print("")
+            text_animation(red + "You follow the noise into that cave" +
+                           " from earlier. You're soon face to " +
+                           "face with a...well, actually you look " +
+                           "down to see a small, black creature." +
+                           " It takes your brain a while to " +
+                           "process what your seeing, but " +
+                           "eventually you come to the undeniable " +
+                           "conclusion that it's a dragon. You " +
+                           "feel like you may be on the brink of " +
+                           "insanity, but the dragon keeps you " +
+                           "safe until you regain the strenght " +
+                           "to continue on once again.")
+            print("")
+            print(cyan + "Alternate True " + red + "Knight " + norm +
+                  "Ending [Past] 4: Opportunity")
+            print("")
+            print(cyan + "Would you like to try again?")
+            print("")
+            print("Yes {1}   No {2}" + norm)
+            choice = input("\t> ")
+
+            while not checkInt(choice) or int(choice) not in [1, 2]:
+              print("")
+              print(cyan + "Please enter a valid number.")
+              print("")
+              print("Yes {1}   No {2}" + norm)
+              choice = input("\t> ")
+
+            if (int(choice) == 1):
+              return 1
+            else:
+              return 0
+          #third ending
+          else:
+            print("")
+            text_animation(red + "You may have the skills, but " +
+                           "you don't have the bravery. Not " +
+                           "without your family around. You turn " +
+                           "tail and run, not even sparing a glance " +
+                           "behind you. The rain hadn't given up " +
+                           "on torturing you yet, leaving a muddy " +
+                           "mess in its wake. You fall flat on your" +
+                           " face, almost thankful you can't see " +
+                           "what just made that noise. Even your " +
+                           "bones can tell its much scarrier than " +
+                           "what you ran away from.")
+            print("")
+            print(red + "Knight " + norm + "Ending 3: Prey")
+            print("")
+            print(cyan + "Would you like to try again?")
+            print("")
+            print("Yes {1}   No {2}" + norm)
+            choice = input("\t> ")
+
+            while not checkInt(choice) or int(choice) not in [1, 2]:
+              print("")
+              print(cyan + "Please enter a valid number.")
+              print("")
+              print("Yes {1}   No {2}" + norm)
+              choice = input("\t> ")
+
+            if (int(choice) == 1):
+              return 1
+            else:
+              return 0
+      else:
+        print("")
+        text_animation("The cave proves to be the best shelter " +
+                       "you could ask for. Your clothes have " +
+                       "almost dried completely, and the rain has " +
+                       "let up. Looking around, you realize " +
+                       "there's much more to this cave. Walking " +
+                       "further in, you reach a fork in the path.")
+        print("")
+        print(red + "Left, towards water {1}   " +
+              "Right, towards darkness {2}" + norm)
+        choice = input("\t> ")
+
+        #input validation
+        while not checkInt(choice) or int(choice) not in [1, 2]:
+          print("")
+          print(cyan + "Please enter a valid number." + norm)
+          print(red + "Left, towards water {1}   " +
+                "Right, towards darkness {2}" + norm)
+          choice = input("\t> ")
+
+        #fifth ending
+        if (int(choice) == 1):
+          print("")
+          text_animation(red + "The water you find is murky " +
+                         "and difficult to see into. You " +
+                         "reach a hand instead, planning to " +
+                         "cup a small amount in your hands " +
+                         "to check the quality. You hoped it " +
+                         "could quench your thirst and maybe " +
+                         "even contain some fish to ease " +
+                         "your aching hunger. The water " +
+                         "certainly contained something. Before " +
+                         "you can even think, you're dragged into " +
+                         "the water. There's no time to " + "struggle.")
+          print("")
+          print(red + "Knight " + norm + "Ending 5: Siren")
+          print("")
+          print(cyan + "Would you like to try again?")
+          print("")
+          print("Yes {1}   No {2}" + norm)
+          choice = input("\t> ")
+
+          while not checkInt(choice) or int(choice) not in [1, 2]:
+            print("")
+            print(cyan + "Please enter a valid number.")
+            print("")
+            print("Yes {1}   No {2}" + norm)
+            choice = input("\t> ")
+
+          if (int(choice) == 1):
+            return 1
+          else:
+            return 0
+        #sixth ending
+        else:
+          print("")
+          text_animation(red + "The darkness you thought was " +
+                         "going to swallow you whole suddenly " +
+                         "disappears as something flies by your" +
+                         " face. Was that a ball of fire? A " +
+                         "piece of wood near you catches fire, " +
+                         "illuminating the whole cave. When " +
+                         "you look forward again, you're met with " +
+                         "a small, black dragon. By all means, " +
+                         "you should be terrified, but somehow, " +
+                         "you know you're safe. Safer than you" +
+                         " have ever been before. And you're " +
+                         "right. This dragon protects you from " +
+                         "everything until it was time for you " +
+                         "to go. With renewed hope, gripping " +
+                         "your sword tightly, you march forward.")
+          print("")
+          print(cyan + "True " + red + "Knight " + norm +
+                "Ending [Past] 6: Opportunity")
+          print("")
+          print(cyan + "Would you like to try again?")
+          print("")
+          print("Yes {1}   No {2}" + norm)
+          choice = input("\t> ")
+
+          while not checkInt(choice) or int(choice) not in [1, 2]:
+            print("")
+            print(cyan + "Please enter a valid number.")
+            print("")
+            print("Yes {1}   No {2}" + norm)
+            choice = input("\t> ")
+
+          if (int(choice) == 1):
+            return 1
+          else:
+            return 0
+  #present branch
+  else:
+    print("")
+    text_animation("You pratice dilligently, acting like " +
+                   "each sword swing takes away a bit of your " +
+                   "nerves. Fortunately or unfortunately, " +
+                   "the anxiety keeps you vigilant. When " +
+                   "the princess' pet escapes the grounds, " +
+                   "you react instantly. At first, you thought " +
+                   "your eyes might've been playing tricks on " +
+                   "you, but when you scoop up the dragon into " +
+                   "your arms, you know it. You've met this " +
+                   "dragon before. You're a bit dazed and " +
+                   "shocked, but you still manage to hand " +
+                   "the dragon over. The princess asks you " +
+                   "why you rushed to help. What to do?")
+    print("")
+    print(red + "Tell the truth {1}   Keep quiet {2}" + norm)
+    choice = input("\t> ")
+
+    #input validation
+    while not checkInt(choice) or int(choice) not in [1, 2]:
+      print("")
+      print(cyan + "Please enter a valid number." + norm)
+      print(red + "Tell the truth {1}   Keep quiet {2}" + norm)
+      choice = input("\t> ")
+
+    if (int(choice) == 1):
+      print("")
+      text_animation("Curiosity gets the best of you " +
+                     "and you come clean about that one " +
+                     "fateful interaction. Obviously, she's " +
+                     "shocked. Of course, how could anyone " +
+                     "predicted that your destiny would be " +
+                     "intertwined with a princess', especially " +
+                     "in such a strange way? Nonetheless, the " +
+                     "connection is there. Overjoyed, the " +
+                     "princess asks you to be her personal " +
+                     "guard. How to respond?")
+      print("")
+      print(red + "Accept {1}   Decline {2}" + norm)
+      choice = input("\t> ")
+
+      #input validation
+      while not checkInt(choice) or int(choice) not in [1, 2]:
+        print("")
+        print(cyan + "Please enter a valid number." + norm)
+        print(red + "Accept {1}   Decline {2}" + norm)
+        choice = input("\t> ")
+
+      #tenth ending
+      if (int(choice) == 1):
+        print("")
+        text_animation(red + "How could you possibly pass up " +
+                      "the offer of your dreams? This is " +
+                      "you could've asked for and more." +
+                      "You immediately say yes, with more " +
+                      "enthusiasm than you meant to let out." +
+                      "Her smile somehow manages to grow even " +
+                      "bigger, boosting your confidence in " +
+                      "your decision. You complete the " +
+                      "tournament, feeling like you're on top " +
+                      "of the world the whole time. After " +
+                      "securing the winning spot, there's no " +
+                      "reason for the King to reject you. " +
+                      "You glance at the princess, and seeing " +
+                      "her smile once again, you're certain " +
+                      "this is what your whole life was for. " +
+                      "This is what your sword was for.")
+        print("")
+        print(cyan + "True " + red + "Knight " + norm + 
+              "Ending [Present] 10: Warrior")
+        print("")
+        print(cyan + "Would you like to try again?")
+        print("")
+        print("Yes {1}   No {2}" + norm)
+        choice = input("\t> ")
+
+        while not checkInt(choice) or int(choice) not in [1, 2]:
+          print("")
+          print(cyan + "Please enter a valid number.")
+          print("")
+          print("Yes {1}   No {2}" + norm)
+          choice = input("\t> ")
+
+        if (int(choice) == 1):
+          return 1
+        else:
+          return 0
+      #ninth ending
+      else:
+        print("")
+        text_animation("You want to. Oh so badly do you want " +
+                       "to remain by their side. To repay that " +
+                       "dragon and get to know the princess. But" +
+                       " you're of meager background, and you've " +
+                       "never been formally trained. How could " +
+                       "you ever serve the princess? You politely " +
+                       "decline, ignoring the disappointment and" +
+                       " sadness in her eyes.")
+        print("")
+        print(red + "Knight " + norm + "Ending 9: Insecurity")
+        print("")
+        print(cyan + "Would you like to try again?")
+        print("")
+        print("Yes {1}   No {2}" + norm)
+        choice = input("\t> ")
+
+        while not checkInt(choice) or int(choice) not in [1, 2]:
+          print("")
+          print(cyan + "Please enter a valid number.")
+          print("")
+          print("Yes {1}   No {2}" + norm)
+          choice = input("\t> ")
+
+        if (int(choice) == 1):
+          return 1
+        else:
+          return 0
+    #eight ending
+    else:
+      print("")
+      text_animation(red + "You keep your mouth shut, staring " +
+                     "blankly at the princess. She gives you a " +
+                     "stiff, polite smile alongside a small nod " +
+                     "before turning on her heels and walking " +
+                     "back to the grounds. You follow quietly " +
+                     "the entire time, returning to your training " +
+                     "without a word. The day passes by, and " +
+                     "you can't stop thinking about that " +
+                     "dragon or the beautiful princess. " +
+                     "Something is missing, but this was your " +
+                     "doing. Nothing to do except sigh and accept.")
+      print("")
+      print(red + "Knight " + norm + "Ending 8: Cowardice")
+      print("")
+      print(cyan + "Would you like to try again?")
+      print("")
+      print("Yes {1}   No {2}" + norm)
+      choice = input("\t> ")
+
+      while not checkInt(choice) or int(choice) not in [1, 2]:
+        print("")
+        print(cyan + "Please enter a valid number.")
+        print("")
+        print("Yes {1}   No {2}" + norm)
+        choice = input("\t> ")
+
+      if (int(choice) == 1):
+        return 1
+      else:
+        return 0
+
+      
+#start of main
+if __name__ == "__main__":
+  #color codes
+  red = "\033[0;31m"
+  green = "\033[0;32m"
+  orange = "\033[0;33m"
+  blue = "\033[0;34m"
+  purple = "\033[0;35m"
+  cyan = "\033[0;36m"
+  norm = "\033[0m"
+  
+  #game will loop until user no longer wants to play
+  while True:
+    #welcome message
+    text_animation("Welcome to the kingdom of " + purple + "Avalon" + norm +
+                   "! Surrounded by a lush green forest " +
+                   "and tall mountains, this is guaranteed to be " +
+                   "the happiest place on Earth. Everything is " +
+                   "certainly as it seems. " + "Say, what is your role here?")
+    print("")
+    print(orange + "Dragon {1}   " + green + "Princess {2}   " + red +
+          "Knight {3}" + norm)
+    choice = input("\t> ")
+
+    #input validation
+    while not checkInt(choice) or int(choice) not in [1, 2, 3]:
+      print(cyan + "Please enter a valid number." + norm)
+      print(orange + "Dragon {1}   " + green + "Princess {2}   " + red +
+            "Knight {3}" + norm)
+      choice = input("\t> ")
+
+    dg = False
+    ps = False
+    kn = False
+    end = 0
+    if (int(choice) == 1):
+      end = dragon()
+      dg = True
+    elif (int(choice) == 2):
+      end = princess()
+      ps = True
+    elif (int(choice) == 3):
+      end = knight()
+      kn = True
+
+    #game either terminates or restarts
+    print("")
+    if (end == 0):
+      if(dg):
+        text_animation(cyan + "Dear young dragon, " + 
+                       "your journey has come to an end. "
+                       + "Thanks for playing!")
+      elif(ps):
+        text_animation(cyan + "Dear young princess, " + 
+                       "your journey has come to an end. "
+                       + "Thanks for playing!")
+      elif(kn):
+        text_animation(cyan + "Dear young knight, " + 
+                       "your journey has come to an end. "
+                       + "Thanks for playing!")
+      break
